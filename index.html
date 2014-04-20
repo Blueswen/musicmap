@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Music Map</title>
+	<!-- 960 Grid -->
+	<link rel="stylesheet" type="text/css" href="css/960_12_col.css">
+	<!-- jQuery -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<!-- Icon font -->
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- Map -->
+	<link rel="stylesheet" href="ammap/ammap.css" type="text/css">
+	<script src="ammap/ammap.js" type="text/javascript"></script>
+	<script src="ammap/maps/js/continentsLow.js" type="text/javascript"></script>
+	<!-- Menu -->
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/jquery.dlmenu.js"></script>	
+	<link rel="stylesheet" type="text/css" href="css/component.css" />
+	<!-- Youtube TV -->
+	<script src="js/ytv.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/ytv.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="css/mycss.css">
+
+	<script type="text/javascript">
+		var map;
+
+		var list = {jp : 'PLkdxVq4n6WP-RiaxrFOJ9tUQHfXbT1aQx',
+					tl : 'PLkdxVq4n6WP9fuLrJ9OfuA2LF9zKQ5WNT',
+					id : 'PLkdxVq4n6WP9YUKDoSBR7bVipfVksDzcK',
+					ep : 'PLkdxVq4n6WP_6uYh719FQWJLcVHQjj2hk',
+ 					fr : 'PLkdxVq4n6WP9_3l4rxmgElslb6Ht4W63i',
+ 					sam : 'PLkdxVq4n6WP-X-cgM53BqupacXbOUO3oS',
+ 					uk : 'PLkdxVq4n6WP-t5qSy5rql-xGsRpY8igzJ',
+ 					it : 'PLkdxVq4n6WP-XSR-x_QlLiiW_uGF8TAiE',
+ 					pt : 'PLkdxVq4n6WP9LvI0S2EUgbmlkr8VdBWNj',
+ 					kr : 'PLkdxVq4n6WP-iYmz6FfQXT79fD7IAVgJ8'
+					};
+
+		var txt = {na :'全世界最大文化輸出國，外加民族大熔爐，美國的流行樂一舉手一投足，都影響著全世界。不但是爵士、搖滾發源地，各式各樣的音樂種類也風靡全球!想聽美國最新流行樂?點進來就對了!!',
+				   sa :'',
+				   eu :'克爾特是一個有語言沒有文字的民族, 性好音樂和自由, 隨著三千多年來的遷徙, 先散播於西班牙、法國和不列顛群島, 然後再隨著近三百年的移民潮而到了美、加、紐、澳等地。克爾特除了保持傳統音樂外, 也融入了其他音樂種類, 尤其對英式民謠和搖滾有很大的影響. 所以現在提到克爾特音樂, 最先想到的國家就是英國(尤其是愛爾蘭), 愛爾蘭民族音樂和居爾特音樂幾乎已劃上等號說到法國，或許你想到的是浪漫、輕鬆，但，法國可不只如此，法國人說：法國流行歌曲的種類，和法國聽流行歌的人一樣多。歌詞歌曲、牙買加風、搖滾、現代，它不停進行創新、從其他國家的音樂中汲取養分，創造出新的音樂。義大利古典音樂一向具有感人至深的浪漫情調與懷舊氛圍，無倫是感人落淚的詠嘆調，或是扣人心弦的美聲情歌，古典與現代流行樂中所蘊含的催情魔力都絕對令你神昏顛倒。',
+				   as :'日本流行音樂應該是某些同學們青少年兒時的回憶~日本音樂發展悠久，類型多元，從主流的音樂到視覺系樂團，甚至網路平台NICONICO，都是享受日本音樂的道路，陪伴大家成長的許多動漫音樂更在日本占有一席之地！K-POP席捲全球，小編之一也是瘋狂迷妹！韓國樂壇除了大家熟悉的唱團體外，實力派SOLO歌手也十分吸引大家注目。另外，除了流行歌，韓國也有相當多非主流的樂團或歌唱組合，成現一個十分多元百花齊放的光景，滿足眾生們的耳朵。熱情奔放的好鄰居，大家心目中的度假勝地!東南亞的流行樂其實不輸台灣，也是非常蓬勃多元的發展著，泰國近年更是悄悄成為流行文化輸出國!想了解島國的各種魅力?快快點進來~帶有濃厚宗教色彩和傳統氣息的印度音樂，強烈的節奏感附和著獨特的音階，由濕婆神所創造的音樂世界開啟了印度曲風的先河，北印度的宮廷風格和南印度的宗教風格，一起來揭開這神祕國度的色彩!',
+				   af :'',
+				   au :''
+					};
+
+		function godesp (mid) {
+			$('#mapdiv').fadeOut(500,function(){
+				$('#desp').text(txt[mid]);
+				$('#desp').fadeIn(500);
+			});
+		}
+
+		function golist (mid) {
+			$('#desp').fadeOut(500,function(){
+				window.controller = new YTV('frame', {
+				user: 'blueswen',
+				accent: 'yellow',
+				playlist: list[mid]
+			});
+				$('#frame').fadeIn(500);
+			});
+		}
+
+		AmCharts.ready(function() {
+			var map;
+
+			map = new AmCharts.AmMap();
+			map.handDrawn = true;
+			map.dragMap = true;
+			map.color = "#FFFFFF";
+			map.zoomOnDoubleClick = false;
+			
+			
+			map.areasSettings = {
+				autoZoom: true,
+				outlineAlpha: 1,
+				outlineColor: "#FFFFFF",
+				outlineThickness: 1,
+				color: "#000000"
+			};
+
+			map.dataProvider = {
+				mapVar: AmCharts.maps.continentsLow,
+				getAreasFromMap: true,
+				areas: [
+				{
+				id: "africa",
+				color: "#2ecc71",
+				passZoomValuesToTarget: false},
+				{
+				id: "asia",
+				color: "#3498db",
+				passZoomValuesToTarget: false},
+				{
+				id: "australia",
+				color: "#1abc9c",
+				passZoomValuesToTarget: false},
+				{
+				id: "europe",
+				color: "#f1c40f",
+				passZoomValuesToTarget: false},
+				{
+				id: "north_america",
+				color: "#e74c3c",
+				passZoomValuesToTarget: false},
+				{
+					id: "south_america",
+					color: "#9b59b6",
+					passZoomValuesToTarget: false}]
+				};
+
+			var zoomControl = map.zoomControl;
+			zoomControl.panControlEnabled = false;
+			zoomControl.zoomControlEnabled = false;
+
+			map.addListener("clickMapObject", function (event) {
+				switch(event.mapObject.id){
+					case "africa":
+					$('#af').click();
+					godesp();
+					break;
+					case "asia":
+					$('#as').click();
+					godesp();
+					break;
+					case "australia":
+					$('#au').click();
+					godesp();
+					break;
+					case "europe":
+					$('#eu').click();
+					godesp();
+					break;
+					case "north_america":
+					$('#na').click();
+					godesp();
+					break;
+					case "south_america":
+					$('#sa').click();
+					godesp();
+					break;
+				}
+			});
+
+	        map.write("mapdiv");
+
+	    });
+
+	</script>
+
+	<script type="text/javascript">
+		$(function() {
+			$( '#dl-menu' ).dlmenu({
+				animationClasses : { classin : 'dl-animate-in-5', classout : 'dl-animate-out-5' }
+			});
+		});
+	</script>
+
+
+</head>
+<body>
+	<nav>
+		<div class="container_12">
+			<ul>
+				<li><a href="news.html">News</a></li>
+				<li><a href="team.html">Team</a></li>
+				<li><a href="index.html">MusicMap</a></li>
+				<li><a href="ask.html">Ask</a></li>
+				<li><a href="link.html">Link</a></li>
+			</ul>
+		</div>
+	</nav>
+	<section id="map" class="top">
+		<div class="container_12">
+			<div class="grid_12 border" style="height:500px;">
+				<div class="grid_2 alpha omega demo-2" style="background:#D35400;height:100%;">
+					<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger" disabled="disabled">Open Menu</button>
+						<ul class="dl-menu dl-menuopen">
+							<li>
+								<a href="#" id="na" onclick="godesp(this.id)">北美洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#">美國</a></li>
+									<li><a href="#">加拿大</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="sa" onclick="godesp(this.id)">南美洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#" id="sam" onclick="golist(this.id)">南美</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="eu" onclick="godesp(this.id)">歐洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#" id="uk" onclick="golist(this.id)">英國</a></li>
+									<li><a href="#" id="it" onclick="golist(this.id)">義大利</a></li>
+									<li><a href="#" id="fr" onclick="golist(this.id)">法國</a></li>
+									<li><a href="#" id="pt" onclick="golist(this.id)">葡萄牙</a></li>
+									<li><a href="#" id="ep" onclick="golist(this.id)">西班牙</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="as" onclick="godesp(this.id)">亞洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#">台灣</a></li>
+									<li><a href="#" id="tl" onclick="golist(this.id)">泰國</a></li>
+									<li><a href="#" id="kr" onclick="golist(this.id)">韓國</a></li>
+									<li><a href="#" id="jp" onclick="golist(this.id)">日本</a></li>
+									<li><a href="#" id="id" onclick="golist(this.id)">印度</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="af" onclick="godesp(this.id)">非洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#">非洲</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" id="au" onclick="godesp(this.id)">大洋洲</a>
+								<ul class="dl-submenu">
+									<li><a href="#">澳洲</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="grid_9 alpha">
+					<div id="mapdiv" style="margin-top:4px;width: 793px; height: 486px;"></div>
+					<div id="desp" style="width: 794px; height: 494px; display: none;">
+						123
+					</div>
+					<div id="frame" style="width: 794px; height: 494px; display: none;"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

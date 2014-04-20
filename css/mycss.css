@@ -1,0 +1,65 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 18px;
+	font-family: "微軟正黑體","Microsoft JhengHei","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+nav {
+	background: rgba(49,49,49,0.95);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 50px;
+	color: #ffffff;
+	text-align: center;
+	padding-top: 15px;
+	/* Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	/* Adds the transparent background */
+	color: rgba(1, 1, 1, 0.8);
+	z-index: 1;
+}
+
+nav li {
+	display: inline-block;
+	padding: 3px 10px;
+}
+
+nav a {
+	font-size: 1.1em;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: default;
+	color: white;
+}
+
+.top {
+	padding-top: 53px;	
+}
+
+.border {
+	border: 3px black solid;
+	border-radius: 5px;
+}
+
+.article {
+	width: 100%;
+	background: #3498db;
+	border-radius: 10px;
+	padding: 15px 3px;
+	margin: 10px 0px;
+}
+
+.contain {
+	display: none;
+}
+
+.memberinfo {
+	height: 200px;
+	border: 2px gray solid;
+	border-radius: 5px;
+	margin:40px 0;
+}
