@@ -32,14 +32,13 @@
   position: absolute;
   z-index: 1;
     padding-top: 10px;
-    background: black;
+    background: url("../images/link.png");
     color: white;
     cursor: pointer;
 }
 .flip .card .back {
   -webkit-transform: rotatey(-180deg);
-    background: blue;
-    background: white;
+    background: url("../images/link.png");
     color: black;
     cursor: pointer;
 }
