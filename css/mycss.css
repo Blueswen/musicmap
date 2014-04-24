@@ -38,7 +38,7 @@ nav a {
 }
 
 .top {
-	padding-top: 70px;	
+	padding-top: 100px;	
 }
 
 .border {
@@ -133,7 +133,8 @@ nav a {
 footer {
 	width: 90%;
 	text-align: center;
-	margin: 20px auto;
+	margin: 50px auto;
+	padding-top: 10px;
 	border-top: 1px gray solid;
 }
 
