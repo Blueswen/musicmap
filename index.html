@@ -28,8 +28,6 @@
 	<link rel="stylesheet" type="text/css" href="css/mycss.css">
 
 	<script type="text/javascript">
-		var map;
-
 		var list = {jp : 'PLkdxVq4n6WP-RiaxrFOJ9tUQHfXbT1aQx',
 					tl : 'PLkdxVq4n6WP9fuLrJ9OfuA2LF9zKQ5WNT',
 					id : 'PLkdxVq4n6WP9YUKDoSBR7bVipfVksDzcK',
@@ -50,17 +48,22 @@
  					ca : 'PLkdxVq4n6WP8l1Hk2X3nCNT6rEpiQeEee'
 					};
 
-		var txt = {na :'全世界最大文化輸出國，外加民族大熔爐，美國的流行樂一舉手一投足，都影響著全世界。不但是爵士、搖滾發源地，各式各樣的音樂種類也風靡全球!想聽美國最新流行樂?點進來就對了!!',
-				   sa :'',
-				   eu :'克爾特是一個有語言沒有文字的民族, 性好音樂和自由, 隨著三千多年來的遷徙, 先散播於西班牙、法國和不列顛群島, 然後再隨著近三百年的移民潮而到了美、加、紐、澳等地。克爾特除了保持傳統音樂外, 也融入了其他音樂種類, 尤其對英式民謠和搖滾有很大的影響. 所以現在提到克爾特音樂, 最先想到的國家就是英國(尤其是愛爾蘭), 愛爾蘭民族音樂和居爾特音樂幾乎已劃上等號說到法國，或許你想到的是浪漫、輕鬆，但，法國可不只如此，法國人說：法國流行歌曲的種類，和法國聽流行歌的人一樣多。歌詞歌曲、牙買加風、搖滾、現代，它不停進行創新、從其他國家的音樂中汲取養分，創造出新的音樂。義大利古典音樂一向具有感人至深的浪漫情調與懷舊氛圍，無倫是感人落淚的詠嘆調，或是扣人心弦的美聲情歌，古典與現代流行樂中所蘊含的催情魔力都絕對令你神昏顛倒。',
-				   as :'日本流行音樂應該是某些同學們青少年兒時的回憶~日本音樂發展悠久，類型多元，從主流的音樂到視覺系樂團，甚至網路平台NICONICO，都是享受日本音樂的道路，陪伴大家成長的許多動漫音樂更在日本占有一席之地！K-POP席捲全球，小編之一也是瘋狂迷妹！韓國樂壇除了大家熟悉的唱團體外，實力派SOLO歌手也十分吸引大家注目。另外，除了流行歌，韓國也有相當多非主流的樂團或歌唱組合，成現一個十分多元百花齊放的光景，滿足眾生們的耳朵。熱情奔放的好鄰居，大家心目中的度假勝地!東南亞的流行樂其實不輸台灣，也是非常蓬勃多元的發展著，泰國近年更是悄悄成為流行文化輸出國!想了解島國的各種魅力?快快點進來~帶有濃厚宗教色彩和傳統氣息的印度音樂，強烈的節奏感附和著獨特的音階，由濕婆神所創造的音樂世界開啟了印度曲風的先河，北印度的宮廷風格和南印度的宗教風格，一起來揭開這神祕國度的色彩!',
+		var txt = {na :'<ul class="nav nav-tabs" id="myTab" style="text-align:center;"> <li class="active" style="display:inline-block;float:none;"><a href="#intro" data-toggle="tab">地區音樂特色</a></li> <li style="display:inline-block;float:none;"><a href="#board" data-toggle="tab">音樂排行榜</a></li> <li style="display:inline-block;float:none;"><a href="#award" data-toggle="tab">音樂獎項</a></li> </ul> <div class="tab-content mintro"> <div class="tab-pane fade in active" id="intro"> <h3>美國</h3> <p>全世界最大文化輸出國，外加民族大熔爐，美國的流行樂一舉手一投足，都影響著全世界。不但是爵士、搖滾發源地，各式各樣的音樂種類也風靡全球！</p> <h3>加拿大</h3> <p>加拿大本地居民為印第安人及愛斯基摩人，他們有著自己獨具風貌的音樂。 17世紀初葉，法國、英國競相在加拿大建立殖民地，移民們帶去了各自的傳統音樂。 18世紀以後，歐洲專業音樂在加拿大獲得日益廣泛的流傳。因此，加拿大音樂是一種含有多種因素的音樂。</p> </div> <div class="tab-pane fade" id="board"> <h3>Billboard</h3> <p>Billboard是一本創辦於1894年的美國雜誌，當時名為Billboard Advertising，內容包含許多音樂種類的介紹與排行榜。本單位提供的排行榜長久以來都是美國最具權威性的唱片排行榜。其中最重要的排行榜為Billboard Hot 100（單曲前100名排行），與告示牌200大專輯榜（專輯前200名排行）。</p> <a href="http://www.billboard.com/" target="_balnk">http://www.billboard.com/</a></div> <div class="tab-pane fade" id="award"> <h3>葛萊美獎</h3> <p>美國錄音界與音樂界最重要的獎項之一，由錄音學院（Recording Academy）負責頒發。學院由錄音業的專業人士所組成，目的在於獎勵過去一年中業界岀色的成就。葛萊美獎是美國四個主要音樂獎之一，相當於音樂界的奧斯卡獎。</p> <h3>朱諾獎</h3> <p>是授與加拿大的音樂歌手以及團體的獎項，被視為加拿大的葛萊美獎。</p> </div> </div>',
+				   sa :'<ul class="nav nav-tabs" id="myTab" style="text-align:center;"> <li class="active" style="display:inline-block;float:none;"><a href="#intro" data-toggle="tab">地區音樂特色</a></li> </ul> <div class="tab-content mintro"> <div class="tab-pane fade in active" id="intro"> <h3>拉丁美洲(Latin America)</h3> <p>涵蓋了南美洲與中美洲的墨西哥及加勒比海各國，他們的音樂文化是三種文化，分別是伊比利文化(西班牙、葡萄牙)，原住民印地安人文化與非洲黑人的文化相互融合的結果。</p> </div> </div>',
+				   eu :'<ul class="nav nav-tabs" id="myTab" style="text-align:center;"> <li class="active" style="display:inline-block;float:none;"><a href="#intro" data-toggle="tab">地區音樂特色</a></li> <li style="display:inline-block;float:none;"><a href="#board" data-toggle="tab">音樂排行榜</a></li> <li style="display:inline-block;float:none;"><a href="#award" data-toggle="tab">音樂獎項</a></li> </ul> <div class="tab-content mintro"> <div class="tab-pane fade in active" id="intro"> <h3>葡萄牙</h3> <p>葡萄牙的傳統音樂，被稱為是葡萄牙的國寶。fado 一字源自拉丁文，意思是指「命運」。fado 的內容多半與愛情、思鄉、命運的擺佈有關。其特殊的吉他樂聲與獨唱者的特有腔調，空靈動人，聽後令容易感到哀悽。</p> <h3>義大利</h3> <p>義大利古典音樂一向具有感人至深的浪漫情調與懷舊氛圍，無論是感人落淚的詠嘆調，或是扣人心弦的美聲情歌，古典與現代流行樂中所蘊含的催情魔力都絕對令你神昏顛倒。</p> <h3>法國</h3> <p>說到法國，或許你想到的是浪漫、輕鬆，但，法國可不只如此，法國人說：法國流行歌曲的種類，和法國聽流行歌的人一樣多。歌詞歌曲、牙買加風、搖滾、現代，它不停進行創新、從其他國家的音樂中汲取養分，創造出新的音樂。</p> </div> <div class="tab-pane fade" id="board"> <h3>SNEP</h3> <p>由法國唱片出版業公會(SNEP)所進行編排的排行榜。</p> <a href="http://www.snepmusique.com/" target="_balnk">http://www.snepmusique.com/</a> <h3>UK Chart</h3> <p>UK Chart是由英國官方排行榜公司(The Official UK Charts Company)所編輯，有單曲排行榜與專輯排行榜，與大多數歐洲國家一致，不使用電台播放為排行的標準，而是參考約6500家唱片零售商和英國網路影音下載業者的銷售資料所進行排行。</p> <a href="http://www.officialcharts.com/" target="_balnk">http://www.officialcharts.com/</a> </div> <div class="tab-pane fade" id="award"> <h3>NRJ Music Award</h3> <p>是一個由法國權威電台所創設的流行音樂獎，地位相當於美國的葛萊美音樂獎。</p> </div>',
+				   as :'<ul class="nav nav-tabs" id="myTab" style="text-align:center;"> <li class="active" style="display:inline-block;float:none;"><a href="#intro" data-toggle="tab">地區音樂特色</a></li> <li style="display:inline-block;float:none;"><a href="#board" data-toggle="tab">音樂排行榜</a></li> <li style="display:inline-block;float:none;"><a href="#award" data-toggle="tab">音樂獎項</a></li> </ul> <div class="tab-content mintro"> <div class="tab-pane fade in active" id="intro"> <h3>印度</h3> <p>帶有濃厚宗教色彩和傳統氣息的印度音樂，強烈的節奏感附和著獨特的音階，由濕婆神所創造的音樂世界開啟了印度曲風的先河，北印度的宮廷風格和南印度的宗教風格。</p> <h3>韓國</h3> <p>K-POP席捲全球，小編之一也是瘋狂迷妹！韓國樂壇除了大家熟悉的唱團體外，實力派SOLO歌手也十分吸引大家注目。另外，除了流行歌，韓國也有相當多非主流的樂團或歌唱組合，成現一個十分多元百花齊放的光景，滿足眾生們的耳朵。</p> <h3>日本</h3> <p>日本流行音樂應該是某些同學們青少年兒時的回憶~日本音樂發展悠久，類型多元，從主流的音樂到視覺系樂團，甚至網路平台NICONICO，都是享受日本音樂的道路，陪伴大家成長的許多動漫音樂更在日本占有一席之地！</p> </div> <div class="tab-pane fade" id="board"> <h3>KKBOX</h3> <p>KKBOX 排行榜，是華人世界最具公信力的音樂排行榜，依據百萬會員的有效點播總次數排序而成，也是每年「數位音樂風雲榜」的重要依據。</p> <a href="http://www.kkbox.com/tw/tc/charts/index.html" target="_balnk">http://www.kkbox.com/tw/tc/charts/index.html</a> <h3>ORICON chart</h3> <p>由日本的ORICON公司所調查並產生的榜單，目前在日本是最具權威性的流行音樂排行榜。</p> <a href="http://www.oricon.co.jp/" target="_balnk">http://www.oricon.co.jp/</a> <h3>GAON chart</h3> <p>為韓國第一個由政府承認的唱片排行榜，希望建立一個像美國的「Billboard」和日本的「Oricon公信榜」般，宣揚其大眾音樂文化。</p> <a href="http://gaonchart.co.kr/" target="_balnk">http://gaonchart.co.kr/</a> </div> <div class="tab-pane fade" id="award"> <h3>金曲獎</h3> <p>金曲獎是臺灣規模最大的音樂獎，與金馬獎、金鐘獎並稱為臺灣三大娛樂獎。創始於1990年，第1屆至第22屆由中華民國行政院新聞局主辦，第23屆之後由中華民國文化部影視及流行音樂產業局接續主辦。</p> <h3>한국대중음악상</h3> <p>韓國音樂大獎，共設有24個類別，包括年度專輯、年度歌曲、網民最受歡迎和終身成就獎等獎項。</p> </div>',
 				   af :'',
 				   au :''
 					};
+	</script>
+
+	<script type="text/javascript">
+		var map;
 
 		function godesp (mid) {
 			$('#mapdiv').fadeOut(500,function(){
-				$('#desp').text(txt[mid]);
+				$('#desp').html(txt[mid]);
+				
 				$('#desp').fadeIn(500);
 			});
 		}
@@ -245,13 +248,22 @@
 				</div>
 				<div class="grid_9 alpha">
 					<div id="mapdiv" style="margin-top:4px;width: 793px; height: 486px;"></div>
-					<div id="desp" style="width: 794px; height: 494px; display: none;">
-						123
-					</div>
+					<div id="desp" style="width: 794px; height: 494px; display: none;"></div>
 					<div id="frame" style="width: 794px; height: 494px; display: none;"></div>
 				</div>
 			</div>
 		</div>
 	</section>
+	<footer>
+		<div class="container_12">
+			<div class="grid_1 push_2">
+				<img src="images/nccu.png" style="display:inline-block;width:100%;">
+			</div>
+			<div class="grid_6 push_2">
+				<p>National Chengchi University</p>
+				<p>Software Application Introduction Web Project</p>
+			</div>
+		</div>		
+	</footer>
 </body>
 </html>

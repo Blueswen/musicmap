@@ -46,16 +46,35 @@ nav a {
 	border-radius: 5px;
 }
 
+.mintro {
+	padding: 5px 20px;
+}
+
 .article {
 	width: 100%;
-	background: #3498db;
+	background-image: url(http://subtlepatterns.com/patterns/skulls.png);
 	border-radius: 10px;
+	border: 1px gray solid;
 	padding: 15px 3px;
 	margin: 10px 0px;
 }
 
+
 .contain {
 	display: none;
+	border-top: 1px gray solid;
+	margin-top: 10px;
+	padding-top: 5px;
+}
+
+.more {
+	margin: 48px 20px 0 0;
+	padding: 4px;
+}
+
+.ntitle {
+	font-size: 1.25em;
+	font-weight: 700;
 }
 
 .memberinfo {
@@ -65,11 +84,64 @@ nav a {
 	margin: 0 0 40px;
 }
 
+.mname {
+	font-size: 28px;
+	padding-right: 10px;
+}
+
+.g{
+	color: #e67e22;
+}
+
+.g:hover{
+	color: #d35400;
+}
+
+.h{
+	color: #e74c3c;
+}
+
+.h:hover{
+	color: #c0392b;
+}
+
 .linkimg {
 	display: block;
 	margin: 0px auto;
 }
 
-.more {
-	align:right;
+#news span {
+	display: block;
 }
+
+#link .card a {
+	display: block;
+	padding-top: 30px;
+	font-weight: 700;
+	color: #222;
+	text-shadow: 0px 2px 3px #555;
+}
+
+#link .card a:hover {
+	text-decoration: none;
+	color: #2c3e50;
+	-webkit-transition: color .20s linear;
+    -moz-transition: color .20s linear;
+    transition: color .20s linear;
+}
+
+footer {
+	width: 90%;
+	text-align: center;
+	margin: 20px auto;
+	border-top: 1px gray solid;
+}
+
+footer p {
+	margin-top: 7px;
+}
+
+footer img {
+	margin-top: 7px;
+}
+
