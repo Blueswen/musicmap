@@ -130,6 +130,10 @@ nav a {
     transition: color .20s linear;
 }
 
+#comments {
+	margin: 0 auto;
+}
+
 footer {
 	width: 90%;
 	text-align: center;
